@@ -1,5 +1,11 @@
 from django.contrib import admin
 from .models import Pessoa
 
-# Register your models here.
-admin.site.register(Pessoa)
+
+class ListandoPessoas(admin.ModelAdmin):
+    list_display = ('id', 'nome', 'email')
+    list_display_links = ('nome', 'email')
+    search_filter = ('nome')
+    list_per_page = 5
+
+admin.site.register(Pessoa, ListandoPessoas)
