@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Recipe
 
 def index(request):
-    receitas = Recipe.objects.all()
+    receitas = Recipe.objects.filter(publicada=True)
 
     dados = {
         'receitas': receitas
