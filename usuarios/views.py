@@ -1,6 +1,7 @@
 from django.db import reset_queries
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
+from django.contrib import auth
 
 # Create your views here.
 def cadastro(request):
@@ -40,12 +41,22 @@ def login(request):
             print('Os campos email e senha não podem ficar em branco')
             return redirect('login')
 
-        print(email, senha)
+        if User.objects.filter(email=email).exists():
+            nome = User.objects.filter(email=email).values_list('username', flat=True).get()
+            user = auth.authenticate(request, username=nome, password=senha)
+            if user is not None:
+                auth.login(request, user)
+                print('Login realizado com sucesso!')
+
         return redirect('dashboard')
     return render(request, 'usuarios/login.html')
 
 def logout(request):
-    pass
+    auth.logout(request)
+    return redirect('index')
 
 def dashboard(request):
-    return render(request, 'usuarios/dashboard.html')
+    if request.user.is_authenticated:
+        return render(request, 'usuarios/dashboard.html')
+    else:
+        return redirect('index')
