@@ -1,3 +1,4 @@
+from django.db import reset_queries
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 
@@ -31,10 +32,15 @@ def cadastro(request):
         return render(request, 'usuarios/cadastro.html')
 
 def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        senha = request.POST['senha']
+        print(email, senha)
+        return redirect('dashboard')
     return render(request, 'usuarios/login.html')
 
 def logout(request):
     pass
 
 def dashboard(request):
-    pass
+    return render(request, 'usuarios/dashboard.html')
