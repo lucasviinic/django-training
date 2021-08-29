@@ -1,4 +1,4 @@
-# django-training
+# django-training-a-recipes-app
 ### Aplicação de gerenciamento de receitas, onde o usuário após efetuar o login tem a liberdade de criar suas receitas, editar e salvar na base de dados.
 
 ## 🔧 Technologies & Tools:
@@ -10,6 +10,15 @@
 ### Tela inicial
 
 <img src="https://i.imgur.com/fx6Rjd7.png" width="800px" align="left">
+
+## Clone, modifique e fique a vontade
+### Após efetuar o clone, siga os seguintes passos:
+
+1. Na raiz do projeto crie um embiente virtual, no meu caso utilizei o venv, para isso abra o PowerShell e digite:
+
+```
+
+```
 
 
 
