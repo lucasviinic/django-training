@@ -11,14 +11,6 @@
 
 <img src="https://i.imgur.com/fx6Rjd7.png" width="800px" align="left">
 
-## Clone, modifique e fique a vontade
-### Após efetuar o clone, siga os seguintes passos:
-
-1. Na raiz do projeto crie um embiente virtual, no meu caso utilizei o venv, para isso abra o PowerShell e digite:
-
-```
-
-```
 
 
 
