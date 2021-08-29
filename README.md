@@ -9,11 +9,15 @@
 
 ### Tela inicial
 
-<img src="https://i.imgur.com/fx6Rjd7.png" width="900px" align="left"></br>
+<img src="https://i.imgur.com/fx6Rjd7.png" width="800px" align="left">
+
+### Tela de Cadastro
+
+<img src="https://i.imgur.com/ppvxRTp.png" width="800px" align="left">
 
 ### Tela de Login
 
-<img src="https://i.imgur.com/WwxpkMw.png" width="900px" align="left">
+<img src="https://i.imgur.com/WwxpkMw.png" width="800px" align="left">
 
 
 
