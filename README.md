@@ -9,7 +9,7 @@
 
 ### Tela inicial
 
-<img src="https://i.imgur.com/fx6Rjd7.png" width="900px" align="left">
+<img src="https://i.imgur.com/fx6Rjd7.png" width="900px" align="left"></br>
 
 ### Tela de Login
 
