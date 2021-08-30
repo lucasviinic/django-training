@@ -1,4 +1,5 @@
 from django.db import reset_queries
+from django.http import request
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
@@ -100,6 +101,23 @@ def edita_receita(request, receita_id):
     receita = get_object_or_404(Recipe, pk=receita_id)
     receita_a_editar = {'receita': receita}
     return render(request, 'usuarios/edita_receita.html', receita_a_editar)
+
+def atualiza_receita(request):
+    if request.method == 'POST':
+        receita_id = request.POST['receita_id']
+        r = Recipe.objects.get(pk=receita_id)
+        r.nome_da_receita = request.POST['nome_da_receita']
+        r.ingredientes = request.POST['ingredientes']
+        r.modo_de_preparo = request.POST['modo_de_preparo']
+        r.tempo_de_preparo = request.POST['tempo_de_preparo']
+        r.rendimento = request.POST['rendimento']
+        r.categoria = request.POST['categoria']
+
+        if 'foto_receita' in request.FILES:
+            r.foto_receita = request.FILES['foto_receita']
+
+        r.save()
+        return redirect('dashboard')
 
 def campo_vazio(campo):
     return not campo.strip()

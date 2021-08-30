@@ -26,13 +26,13 @@
             <div class="col-12">
             <p>Todos os campos são obrigatórios</p>
                 <div class="contact-form-area">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{% url 'atualiza_receita' %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             <input type="text" id="receita_id" class="form-control" name="receita_id" value="{{receita.id}}" hidden>
                         <div class="row">
                             <div class="col-12 col-lg-12">
-                                <label for="nome_receita"><b>Título da receita</b></label>
-                                <input type="text" id="nome_receita" class="form-control" name="nome_receita" placeholder="Ex. Suco de limão" value="{{receita.nome_da_receita}}" required>
+                                <label for="nome_da_receita"><b>Título da receita</b></label>
+                                <input type="text" id="nome_da_receita" class="form-control" name="nome_da_receita" placeholder="Ex. Suco de limão" value="{{receita.nome_da_receita}}" required>
                             </div>
                             <div class="col-12">
                                 <label for="file"><b>Ingredientes</b></label>
@@ -40,11 +40,11 @@
                             </div>
                             <div class="col-12">
                                 <label for="file"><b>Modo de preparo</b></label>
-                                <textarea class="form-control" name="modo_preparo" cols="30" rows="10" placeholder="Ex. Corte o limão com cuidado e exprema no copo  &#10;Misture com a água e sirva." required>{{receita.modo_de_preparo}}</textarea>
+                                <textarea class="form-control" name="modo_de_preparo" cols="30" rows="10" placeholder="Ex. Corte o limão com cuidado e exprema no copo  &#10;Misture com a água e sirva." required>{{receita.modo_de_preparo}}</textarea>
                             </div>
                             <div class="col-12 col-lg-4">
                                 <label for="file"><b>Tempo de preparo (minutos)</b></label>
-                                <input type="number" class="form-control" name="tempo_preparo" placeholder="Ex. 2" value="{{receita.tempo_preparo}}" required>
+                                <input type="number" class="form-control" name="tempo_de_preparo" placeholder="Ex. 2" value="{{receita.tempo_preparo}}" required>
                             </div>
                             <div class="col-12 col-lg-4">
                                 <label for="file"><b>Rendimento</b></label>
