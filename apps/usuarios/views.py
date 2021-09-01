@@ -6,6 +6,7 @@ from django.contrib import auth, messages
 from recipes.models import Recipe
 
 def cadastro(request):
+    '''Cadastra uma nova pessoa no sistema'''
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
@@ -37,6 +38,7 @@ def cadastro(request):
         return render(request, 'usuarios/cadastro.html')
 
 def login(request):
+    '''Realiza o login de uma pessoa no sistema'''
     if request.method == 'POST':
         email = request.POST['email']
         senha = request.POST['senha']
@@ -56,10 +58,12 @@ def login(request):
     return render(request, 'usuarios/login.html')
 
 def logout(request):
+    '''Realiza o logout do usuário'''
     auth.logout(request)
     return redirect('index')
 
 def dashboard(request):
+    '''Dashboard após efetuado o login'''
     if request.user.is_authenticated:
         id = request.user.id
         receitas = Recipe.objects.order_by('-data_receita').filter(pessoa=id)
