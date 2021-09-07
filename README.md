@@ -9,8 +9,6 @@
 
 ### Tela inicial
 
-<img src="https://i.imgur.com/fx6Rjd7.png" width="800px" align="left">
-
 
 
 
